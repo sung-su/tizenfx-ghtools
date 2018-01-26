@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A small webhook server for https://github.com/Samsung/TizenFX",
   "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/TizenAPI/tizenfx-ghtools"

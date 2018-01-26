@@ -21,5 +21,5 @@ webhookHandler.on('pull_request', function(repo, data) {
 
 
 app.listen(app.get('port'), function() {
-  console.log('izenfx-ghtools is listening on port ' + app.get('port'))
+  console.log('tizenfx-ghtools is listening on port ' + app.get('port'))
 })
