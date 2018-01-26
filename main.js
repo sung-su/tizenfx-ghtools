@@ -28,7 +28,7 @@ webhookHandler.on('pull_request', function(repo, data) {
     labels.push('API4');
   }
 
-  log.info('adding lables ' + JSON.stringify(lables) + ' to ' + data.pull_request.number);
+  log.info('adding labels ' + JSON.stringify(labels) + ' to ' + data.pull_request.number);
 
 });
 
