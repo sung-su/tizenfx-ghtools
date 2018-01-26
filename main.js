@@ -10,7 +10,7 @@ var webhookHandler = webhook({
 })
 
 var app = express()
-app.set('port', process.env.SERVER_PORT || 5555)
+app.set('port', process.env.PORT || 5555)
 app.use(parser.json())
 app.use(webhookHandler)
 
