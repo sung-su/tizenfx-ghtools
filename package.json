@@ -1,0 +1,22 @@
+{
+  "name": "tizenfx-autolabel",
+  "version": "0.0.1",
+  "description": "A small webhook server to auto-label new PRs of https://github.com/Samsung/TizenFX",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TizenAPI/TizenFX-AutoLabel"
+  },
+  "author": "Wonyoung Choi <wy80.choi@samsung.com> (@WonyoungChoi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TizenAPI/TizenFX-AutoLabel/issues"
+  },
+  "homepage": "https://github.com/TizenAPI/TizenFX-AutoLabel",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "express-github-webhook": "^1.0.5",
+    "request": "^2.69.0"
+  }
+}
