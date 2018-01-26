@@ -1,3 +1,4 @@
+var log = require('./log')
 var express = require('express')
 var request = require('request')
 var webhook = require('express-github-webhook')
@@ -16,10 +17,10 @@ app.use(webhookHandler)
 
 
 webhookHandler.on('pull_request', function(repo, data) {
-
+  log.info('repo=' + repo);
 })
 
 
 app.listen(app.get('port'), function() {
-  console.log('tizenfx-ghtools is listening on port ' + app.get('port'))
+  log.info('tizenfx-ghtools is listening on port ' + app.get('port'))
 })
