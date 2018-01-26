@@ -42,6 +42,7 @@ webhookHandler.on('pull_request', function(repo, data) {
   };
   request(opts, function(err, results, body) {
     if (err) log.error(err);
+    log.debug(JSON.stringify(body, null, ' '));
   });
 
 });
