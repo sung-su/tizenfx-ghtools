@@ -3,18 +3,23 @@ var request = require('request')
 var webhook = require('express-github-webhook')
 var parser = require('body-parser')
 
+var accessToken = process.env.GITHUB_TOKEN
+var webhookHandler = webhook({
+  path: '/',
+  secret: process.env.GITHUB_SECRET
+})
 
 var app = express()
-app.set('port', 5555)
+app.set('port', process.env.SERVER_PORT || 5555)
 app.use(parser.json())
+app.use(webhookHandler)
 
 
-app.get('/', function(req, res) {
-  res.send('Hello World')
+webhookHandler.on('pull_request', function(repo, data) {
+
 })
 
 
-
 app.listen(app.get('port'), function() {
-  console.log('izenfx-autolabel is listening on port ' + app.get('port'))
+  console.log('izenfx-ghtools is listening on port ' + app.get('port'))
 })
