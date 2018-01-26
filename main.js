@@ -30,6 +30,20 @@ webhookHandler.on('pull_request', function(repo, data) {
 
   log.info('adding labels ' + JSON.stringify(labels) + ' to ' + data.pull_request.number);
 
+  var opts = {
+    method: 'POST',
+    uri: data.pull_request.issue_url + '/labels',
+    headers: {
+      'User-Agent': 'tizenfx-ghtools',
+      'Authorization': 'token ' + accessToken,
+      'Content-Type': 'application/json'
+    },
+    form: JSON.stringify(labels)
+  };
+  request(opts, function(err, results, body) {
+    if (err) log.error(err);
+  });
+
 });
 
 
